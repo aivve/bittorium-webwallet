@@ -1,13 +1,13 @@
 <html>
 <head>
-<title>Talleo webwallet</title>
+<title>Karbo webwallet</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="header">
 	<div class="logo"><img src="/images/logo.png"></div>
-	<div class="pagetitle">Talleo Web Wallet</div>
+	<div class="pagetitle">Karbo Web Wallet</div>
 </div>
 
 <div class="page">
@@ -75,9 +75,9 @@ if (logged_in()) {
     $tx = $result->transaction;
     echo "<h3>Transaction " . $hash . "</h3>";
     echo "<table id='transaction'>";
-    echo "<tr><th>Amount</th><td>" . number_format(get_amount($address, $hash) / 100, 2) . " TLO</td></tr>";
+    echo "<tr><th>Amount</th><td>" . number_format(get_amount($address, $hash) / 100, 2) . " KRB</td></tr>";
     echo "<tr><th>Block</th><td>" . $tx->blockIndex . "</td></tr>";
-    echo "<tr><th>Fee</th><td>" . number_format($tx->fee / 100, 2) . " TLO</td></tr>";
+    echo "<tr><th>Fee</th><td>" . number_format($tx->fee / 100, 2) . " KRB</td></tr>";
     echo "<tr><th>Type</th><td>" . ($tx->isBase ? "Coinbase" : "Key output") . "</td></tr>";
     if (strlen($tx->paymentId) > 0) {
       echo "<tr><th>Payment ID</th><td>" . $tx->paymentID . "</td></tr>";
@@ -92,7 +92,7 @@ if (logged_in()) {
     foreach ($tx->transfers as $transfer) {
       echo "<tr>";
       echo "<td>" . $transfer->address . "</td>";
-      echo "<td>" . number_format($transfer->amount / 100, 2) . " TLO</td>";
+      echo "<td>" . number_format($transfer->amount / 100, 2) . " KRB</td>";
       echo "<td>" . $WalletTransferType[$transfer->type] . "</td>";
       echo "</tr>";
     }

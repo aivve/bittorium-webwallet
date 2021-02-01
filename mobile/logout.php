@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Talleo webwallet</title>
+<title>Karbo webwallet</title>
 <link rel="shortcut icon" href="/images/logo.png" >
 </head>
 <body>

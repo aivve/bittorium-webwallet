@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Talleo webwallet</title>
+<title>Karbo webwallet</title>
 <link rel="shortcut icon" href="/images/logo.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
 <link rel="stylesheet" href="/style.css">
@@ -8,7 +8,7 @@
 <body>
 <div class="header">
         <div class="logo"><img src="/images/logo.png"></div>
-        <div class="pagetitle">Talleo Web Wallet</div>
+        <div class="pagetitle">Karbo Web Wallet</div>
 </div>
 
 <div class="page">
@@ -60,7 +60,7 @@ if (logged_in()) {
   $params['address'] = $faucetWallet;
   $faucetBalance = walletrpc_post("getBalance", $params);
   $faucetAvailableBalance = $faucetBalance->availableBalance;
-  echo "Faucet balance: " . number_format($faucetAvailableBalance/100, 2) . " TLO<br/>";
+  echo "Faucet balance: " . number_format($faucetAvailableBalance/100, 2) . " KRB<br/>";
   if ($faucetAvailableBalance > 0) {
     if (isset($_GET['claim']) && $_GET['claim'] == "yes") {
       $amount = rand(100, 500);

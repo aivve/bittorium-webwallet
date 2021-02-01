@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Talleo webwallet</title>
+<title>Karbo webwallet</title>
 <link rel="shortcut icon" href="images/logo.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
 <link rel="stylesheet" href="style.css">
@@ -8,7 +8,7 @@
 <body>
 <div class="header">
         <div class="logo"><img src="/images/logo.png"></div>
-        <div class="pagetitle">Talleo Web Wallet</div>
+        <div class="pagetitle">Karbo Web Wallet</div>
 </div>
 
 <div class="page">
@@ -60,7 +60,7 @@ if (logged_in()) {
   $params['address'] = $faucetWallet;
   $faucetBalance = walletrpc_post("getBalance", $params);
   $faucetAvailableBalance = $faucetBalance->availableBalance;
-  echo "Faucet balance: " . number_format($faucetAvailableBalance/100, 2) . " TLO<br/>";
+  echo "Faucet balance: " . number_format($faucetAvailableBalance/100, 2) . " KRB<br/>";
   if ($faucetAvailableBalance > 0) {
     if (isset($_GET['claim']) && $_GET['claim'] == "yes") {
       $amount = rand(100, 500);
@@ -116,7 +116,7 @@ if (logged_in()) {
         if (array_key_exists('error', $result)) {
           if (array_key_exists('message', $result->error)) {
             if ($result->error->message == 'Wrong amount') {
-              echo "<span class='error'>Sending failed because there was not enough unlocked balance, available balance ", number_format($faucetAvailableBalance / 100, 2), " TLO!</span></div></body></html>";
+              echo "<span class='error'>Sending failed because there was not enough unlocked balance, available balance ", number_format($faucetAvailableBalance / 100, 2), " KRB!</span></div></body></html>";
               exit();
             } else if ($result->error->message == 'Transaction size is too big') {
               echo "<span class='error'>Sending failed because faucet wallet doesn&apos;t have enough large inputs.</span></div></body></html>";
